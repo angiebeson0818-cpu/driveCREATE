@@ -756,27 +756,12 @@ footer nav a:hover { color: var(--gold-light); }
       <div class="ticket rise" id="golden-ticket">
         <span class="eyebrow">Golden Ticket</span>
         <h3>Have a Golden Ticket code?</h3>
-        <p>Enter it here to get the full bundle free.</p>
+        <p>Enter it here. Your total drops to $0 at checkout, and your downloads open right after.</p>
         <form id="ticketForm" autocomplete="off">
           <input id="ticketCode" type="text" placeholder="Enter code" aria-label="Golden Ticket code" spellcheck="false">
           <button class="btn btn-gold" type="submit">Redeem</button>
         </form>
         <p class="msg" id="ticketMsg" role="status"></p>
-      </div>
-    </div>
-
-    <div id="premium" hidden>
-      <div class="head" style="margin-top:56px">
-        <span class="eyebrow">You're in</span>
-        <h2 class="h2">Your bundle is ready to download.</h2>
-      </div>
-      <div class="files">
-        <div class="file"><h3>Oklahoma Driver Blueprint</h3><p>All 15 blueprint pages and the full road map in one guide.</p><a class="btn btn-gold btn-sm" href="/downloads/oklahoma-driver-blueprint.pdf" download>Download PDF</a></div>
-        <div class="file"><h3>Complete Study Guide</h3><p>The Oklahoma permit study guide with practice questions and answer keys.</p><a class="btn btn-gold btn-sm" href="/downloads/complete-study-guide.pdf" download>Download PDF</a></div>
-        <div class="file"><h3>Defensive Driving Blueprint</h3><p>The 3-second rule, blind spots, hydroplaning and the Parent's Code of Calm.</p><a class="btn btn-gold btn-sm" href="/downloads/defensive-driving-blueprint.pdf" download>Download PDF</a></div>
-        <div class="file"><h3>Road Literacy Primer</h3><p>Signs, lines and road basics for brand-new drivers.</p><a class="btn btn-gold btn-sm" href="/downloads/road-literacy-primer.pdf" download>Download PDF</a></div>
-        <div class="file"><h3>Mastering the Drive Test</h3><p>The cockpit drill, backing up, parallel parking and more.</p><a class="btn btn-gold btn-sm" href="/downloads/mastering-practical-driving.pdf" download>Download PDF</a></div>
-        <div class="file"><h3>Bonus video</h3><p>The Oklahoma Permit Blueprint walkthrough with Angie.</p><a class="btn btn-gold btn-sm" href="/downloads/permit-blueprint-video.mp4" download>Download video</a></div>
       </div>
     </div>
   </div>
@@ -955,28 +940,14 @@ footer nav a:hover { color: var(--gold-light); }
     } else fallback();
   });
 
-  // Golden Ticket (the code is stored as a fingerprint, not as plain text)
-  var TICKET = '9e65ab9803daaeb477733a6680b0376f870aa4c07e145b9b73aba82a8fcb76ce';
-  var premium = document.getElementById('premium'), priceCard = document.getElementById('priceCard'), tMsg = document.getElementById('ticketMsg');
-  function grant() { premium.hidden = false; priceCard.hidden = true; }
-  if (store.get('goldenTicketUnlocked') === 'true') grant();
+  // Golden Ticket: Stripe checks the code at checkout, then sends the buyer to their downloads
+  var CHECKOUT = 'https://buy.stripe.com/fZuaEY5HVc8CbQUfXR9Zm01', tMsg = document.getElementById('ticketMsg');
   document.getElementById('ticketForm').addEventListener('submit', function (e) {
     e.preventDefault();
     var code = document.getElementById('ticketCode').value.trim().toUpperCase();
-    tMsg.className = 'msg';
-    if (!code) { tMsg.textContent = 'Enter your code first.'; return; }
-    if (!(window.crypto && crypto.subtle)) { tMsg.className = 'msg bad'; tMsg.textContent = 'This browser can’t check codes. Try Chrome or Safari.'; return; }
-    crypto.subtle.digest('SHA-256', new TextEncoder().encode(code)).then(function (buf) {
-      var hex = Array.prototype.map.call(new Uint8Array(buf), function (b) { return b.toString(16).padStart(2, '0'); }).join('');
-      if (hex === TICKET) {
-        store.set('goldenTicketUnlocked', 'true');
-        tMsg.className = 'msg good'; tMsg.textContent = 'Welcome in. Your downloads are below.';
-        grant();
-        premium.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-      } else {
-        tMsg.className = 'msg bad'; tMsg.textContent = 'That code didn’t match. Check the spelling and try again.';
-      }
-    });
+    if (!code) { tMsg.className = 'msg bad'; tMsg.textContent = 'Enter your code first.'; return; }
+    tMsg.className = 'msg good'; tMsg.textContent = 'Taking you to checkout with your code applied.';
+    window.location.href = CHECKOUT + '?prefilled_promo_code=' + encodeURIComponent(code);
   });
 
   // Sticky phone buttons appear after the hero
