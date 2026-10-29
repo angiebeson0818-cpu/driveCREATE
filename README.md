@@ -37,20 +37,36 @@ Built for families doing Parent-Taught Driver Education (PTDE) through Service O
 
 ## Tech
 
-Single-file HTML app. No framework. No dependencies. Fully self-contained.
+One HTML page plus an `assets/` folder of compressed images. No framework. No build step.
 
-- Fonts: Bebas Neue + Cormorant Garamond + Montserrat
-- Palette: Onyx `#1A1A1A` · Gold `#C9A84C` · Cream `#FDF8F0`
+- Fonts: Bebas Neue + Cormorant Garamond + Inter (Onyx brand system)
+- Palette: Onyx `#0F0F0F` · Charcoal `#1A1A1A` · Gold `#D4AF37` · Cream `#FDFBD3`
 - Deployed via Vercel
 
 ---
 
 ## Links
 
-- 🌐 Live app: [drivecreate.vercel.app](https://drivecreate.vercel.app)
+- 🌐 Live app: [drive-create.vercel.app](https://drive-create.vercel.app)
 - 🛒 Main store: [angiecreates.pro](https://angiecreates.pro)
 - 📋 Oklahoma PTDE: [Service Oklahoma](https://oklahoma.gov/service/sokonline/online-parent-taught.html)
 
 ---
 
 *Made with love by Momma. For Tory, and every teen driver out there.* 🖤
+
+---
+
+## Updating the photos
+
+The page has three real-photo slots. To swap a photo, replace the file in `assets/photos/` and keep the exact name. If a file is missing, an elegant "Photo coming soon" frame shows instead.
+
+- `angie-tory-car.jpg` · Tory driving with Angie as co-pilot (top of the page)
+- `angie-tory-night.jpg` · Angie and Tory by the car at night (wide photo above the story)
+- `angie-office.jpg` · Angie in the driveCREATE office ("Why this exists" section)
+
+Portrait or square photos look best. Around 1200 pixels wide is plenty.
+
+## Sharing with driving schools
+
+The QR code lives at `assets/qr-drivecreate.svg` and opens https://drive-create.vercel.app.
