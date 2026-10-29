@@ -166,6 +166,14 @@ p { margin: 0; }
 .empty-state b { font-family: var(--display); letter-spacing: .14em; color: var(--gold); font-size: 15px; font-weight: 400; }
 .empty-state span { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--cream); }
 .hero .photo { aspect-ratio: 4 / 5; max-width: 100%; }
+.hero .photo img { object-position: center 30%; }
+.story .photo img { object-position: center 12%; }
+.band.reel { padding-block: clamp(48px, 7vw, 88px) 0; }
+.reel + .band { border-top: 0; }
+.reel .photo { aspect-ratio: 16 / 9; }
+.reel .photo img { object-position: center 40%; }
+.reel figcaption { font-size: clamp(20px, 3vw, 30px); left: 24px; bottom: 22px; }
+@media (max-width: 600px) { .reel .photo { aspect-ratio: 4 / 3; } }
 @media (max-width: 860px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .hero .photo { aspect-ratio: 4 / 3; }
@@ -427,9 +435,9 @@ footer nav a:hover { color: var(--gold-light); }
       </div>
     </div>
     <figure class="photo" id="photo-car">
-      <img src="assets/photos/angie-tory-car.jpg" alt="Angie and her daughter Tory in the car before a practice drive" loading="eager">
+      <img src="assets/photos/angie-tory-car.jpg" alt="Tory in the driver's seat with her mom Angie riding along as co-pilot" width="1200" height="1490" loading="eager">
       <div class="empty-state" aria-hidden="true"><b>Photo coming soon</b><span>Angie and Tory, ready to roll</span></div>
-      <figcaption>Angie and Tory, ready to roll.</figcaption>
+      <figcaption>Tory drives. Mom co-pilots.</figcaption>
     </figure>
   </div>
 </section>
@@ -661,11 +669,22 @@ footer nav a:hover { color: var(--gold-light); }
   </div>
 </section>
 
+<!-- PHOTO REEL -->
+<section class="band reel" aria-label="Angie and Tory">
+  <div class="wrap">
+    <figure class="photo rise">
+      <img src="assets/photos/angie-tory-night.jpg" alt="Angie and Tory standing by a black car on a city street at night" width="1600" height="896" loading="lazy">
+      <div class="empty-state" aria-hidden="true"><b>Photo coming soon</b><span>Angie and Tory</span></div>
+      <figcaption>From nervous passenger to confident driver.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- STORY -->
 <section class="band" id="story">
   <div class="wrap story">
     <figure class="photo rise" id="photo-office">
-      <img src="assets/photos/angie-office.jpg" alt="Angie, founder of angieCREATEs, in her office" loading="lazy">
+      <img src="assets/photos/angie-office.jpg" alt="Angie, founder of angieCREATEs, in the driveCREATE office" width="1000" height="1771" loading="lazy">
       <div class="empty-state" aria-hidden="true"><b>Photo coming soon</b><span>Angie in the office</span></div>
     </figure>
     <div class="story-copy rise">

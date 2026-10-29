@@ -59,10 +59,11 @@ One HTML page plus an `assets/` folder of compressed images. No framework. No bu
 
 ## Updating the photos
 
-The page has two real-photo slots. Drop the files into `assets/photos/` with these exact names and they appear automatically:
+The page has three real-photo slots. To swap a photo, replace the file in `assets/photos/` and keep the exact name. If a file is missing, an elegant "Photo coming soon" frame shows instead.
 
-- `angie-tory-car.jpg` · Angie and Tory in the car (top of the page). Until it's added, an elegant "Photo coming soon" frame shows.
-- `angie-office.jpg` · Angie in the office ("Why this exists" section). Replace the current file with the new photo.
+- `angie-tory-car.jpg` · Tory driving with Angie as co-pilot (top of the page)
+- `angie-tory-night.jpg` · Angie and Tory by the car at night (wide photo above the story)
+- `angie-office.jpg` · Angie in the driveCREATE office ("Why this exists" section)
 
 Portrait or square photos look best. Around 1200 pixels wide is plenty.
 
