@@ -168,7 +168,7 @@ p { margin: 0; }
 .hero .photo { aspect-ratio: 4 / 5; max-width: 100%; }
 .hero .photo img { object-position: center 30%; }
 .story .photo img { object-position: center 12%; }
-.band.reel { padding-block: clamp(48px, 7vw, 88px) 0; }
+.band.reel { padding-block: clamp(48px, 7vw, 88px); }
 .reel + .band { border-top: 0; }
 .reel .photo { aspect-ratio: 16 / 9; }
 .reel .photo img { object-position: center 40%; }
@@ -586,6 +586,17 @@ footer nav a:hover { color: var(--gold-light); }
   </div>
 </section>
 
+<!-- PHOTO REEL -->
+<section class="band reel" aria-label="Angie and Tory">
+  <div class="wrap">
+    <figure class="photo rise">
+      <img src="assets/photos/angie-tory-night.jpg" alt="Angie and Tory standing by a black car on a city street at night" width="1600" height="896" loading="lazy">
+      <div class="empty-state" aria-hidden="true"><b>Photo coming soon</b><span>Angie and Tory</span></div>
+      <figcaption>From nervous passenger to confident driver.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- GO DEEPER -->
 <section class="band alt" id="deeper">
   <div class="wrap">
@@ -666,17 +677,6 @@ footer nav a:hover { color: var(--gold-light); }
         <div class="in"><div class="gallery" id="gallery"></div></div>
       </details>
     </div>
-  </div>
-</section>
-
-<!-- PHOTO REEL -->
-<section class="band reel" aria-label="Angie and Tory">
-  <div class="wrap">
-    <figure class="photo rise">
-      <img src="assets/photos/angie-tory-night.jpg" alt="Angie and Tory standing by a black car on a city street at night" width="1600" height="896" loading="lazy">
-      <div class="empty-state" aria-hidden="true"><b>Photo coming soon</b><span>Angie and Tory</span></div>
-      <figcaption>From nervous passenger to confident driver.</figcaption>
-    </figure>
   </div>
 </section>
 
