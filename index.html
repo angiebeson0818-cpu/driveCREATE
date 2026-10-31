@@ -282,7 +282,7 @@ p { margin: 0; }
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
 .gallery button { padding: 0; border: 1px solid var(--slate); border-radius: var(--r-sm); background: var(--charcoal); cursor: zoom-in; overflow: hidden; display: grid; text-align: left; color: var(--white); transition: border-color .3s, transform .4s var(--ease); }
 .gallery button:hover { border-color: var(--gold); transform: translateY(-3px); }
-.gallery img { aspect-ratio: 16 / 10; width: 100%; object-fit: cover; }
+.gallery img { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; }
 .gallery span { font-size: 12.5px; padding: 8px 10px; line-height: 1.35; color: #D8D3C2; }
 dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); width: 100%; }
 dialog.lightbox::backdrop { background: rgba(8,8,8,.88); backdrop-filter: blur(6px); }
@@ -674,6 +674,10 @@ footer nav a:hover { color: var(--gold-light); }
           <li>Calm comes first. Try box breathing together: in for 4, hold 4, out 4, hold 4.</li>
         </ul></div>
       </details>
+      <details class="rise" id="blueprints">
+        <summary><span>See the 15 blueprint pages<small>The visual study guides inside the bundle</small></span></summary>
+        <div class="in"><div class="gallery" id="gallery"></div></div>
+      </details>
     </div>
   </div>
 </section>
@@ -908,12 +912,11 @@ footer nav a:hover { color: var(--gold-light); }
 
   // Blueprint gallery and lightbox
   var pages = [
-    'The Elite Upgrade Blueprint', 'The Oklahoma Driver’s Blueprint road map', 'The GDL timeline', 'Choosing your Driver’s Ed pathway',
-    'The Service Oklahoma Go-Bag', 'Inside the written knowledge test', 'Rules of the road: right-of-way', 'Signs and lines decoder',
-    'The 3-second rule', 'Sharing the road: big rigs and bicycles', 'The danger zones', 'Zero tolerance',
-    'You passed the written test. Now what?', 'The parent co-pilot strategy', 'The drive test blueprint', 'Ready to roll'
+    'The Oklahoma Driver\u2019s Blueprint', 'Your 5 steps', 'The GDL timeline', 'Choosing your Driver\u2019s Ed path', 'The Service Oklahoma Go-Bag',
+    'Inside the written test', 'Right-of-way', 'Signals and speed', 'The 3-second rule', 'Weather and danger zones',
+    'Zero tolerance under 21', 'You passed the written test. Now what?', 'The parent co-pilot strategy', 'The drive test', 'Ready to roll'
   ];
-  var srcs = pages.map(function (_, k) { return k === 0 ? 'assets/blueprints/00-elite-upgrade.jpg' : 'assets/blueprints/' + String(k).padStart(2, '0') + '.jpg'; });
+  var srcs = pages.map(function (_, k) { return 'assets/blueprints/' + String(k + 1).padStart(2, '0') + '.jpg'; });
   var gal = document.getElementById('gallery');
   if (gal) {
   gal.innerHTML = pages.map(function (p, k) {
