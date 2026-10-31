@@ -168,7 +168,7 @@ p { margin: 0; }
 .hero .photo { aspect-ratio: 4 / 5; max-width: 100%; }
 .hero .photo img { object-position: center 30%; }
 .story .photo img { object-position: center 12%; }
-.band.reel { padding-block: clamp(48px, 7vw, 88px) 0; }
+.band.reel { padding-block: clamp(48px, 7vw, 88px); }
 .reel + .band { border-top: 0; }
 .reel .photo { aspect-ratio: 16 / 9; }
 .reel .photo img { object-position: center 40%; }
@@ -349,6 +349,7 @@ footer .brand img { width: 56px; height: 56px; }
 footer .wordmark { font-size: 26px; }
 .heart { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--gold-light); }
 .legal { color: #8A8577; font-size: 12.5px; }
+.ai-note { max-width: 62ch; color: var(--muted); font-size: 13.5px; border: 1px solid var(--line); border-radius: var(--r-md); padding: 12px 16px; }
 footer nav { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 14px; }
 footer nav a { color: var(--muted); text-decoration: none; }
 footer nav a:hover { color: var(--gold-light); }
@@ -586,6 +587,17 @@ footer nav a:hover { color: var(--gold-light); }
   </div>
 </section>
 
+<!-- PHOTO REEL -->
+<section class="band reel" aria-label="Angie and Tory">
+  <div class="wrap">
+    <figure class="photo rise">
+      <img src="assets/photos/angie-tory-night.jpg" alt="Angie and Tory standing by a black car on a city street at night" width="1600" height="896" loading="lazy">
+      <div class="empty-state" aria-hidden="true"><b>Photo coming soon</b><span>Angie and Tory</span></div>
+      <figcaption>From nervous passenger to confident driver.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- GO DEEPER -->
 <section class="band alt" id="deeper">
   <div class="wrap">
@@ -669,17 +681,6 @@ footer nav a:hover { color: var(--gold-light); }
   </div>
 </section>
 
-<!-- PHOTO REEL -->
-<section class="band reel" aria-label="Angie and Tory">
-  <div class="wrap">
-    <figure class="photo rise">
-      <img src="assets/photos/angie-tory-night.jpg" alt="Angie and Tory standing by a black car on a city street at night" width="1600" height="896" loading="lazy">
-      <div class="empty-state" aria-hidden="true"><b>Photo coming soon</b><span>Angie and Tory</span></div>
-      <figcaption>From nervous passenger to confident driver.</figcaption>
-    </figure>
-  </div>
-</section>
-
 <!-- STORY -->
 <section class="band" id="story">
   <div class="wrap story">
@@ -752,6 +753,7 @@ footer nav a:hover { color: var(--gold-light); }
         </ul>
         <a class="btn btn-gold" href="https://buy.stripe.com/fZuaEY5HVc8CbQUfXR9Zm01" target="_blank" rel="noopener">Get the bundle · $10</a>
         <p class="fine">Secure checkout by Stripe. Instant digital delivery.</p>
+        <p class="fine">Guides and graphics are made with the help of AI tools, then reviewed and fact-checked by Angie.</p>
       </div>
       <div class="ticket rise" id="golden-ticket">
         <span class="eyebrow">Golden Ticket</span>
@@ -780,6 +782,7 @@ footer nav a:hover { color: var(--gold-light); }
       <a href="https://oklahoma.gov/service/sokonline/online-parent-taught.html" target="_blank" rel="noopener">Service Oklahoma PTDE</a>
     </nav>
     <p class="heart">Made with love by Momma. For Tory, and every teen driver out there.</p>
+    <p class="ai-note" id="ai">Made with AI, checked by a mom. Angie creates driveCREATE with the help of AI tools. Some photos and graphics are AI-enhanced, and the guides are drafted with AI, then reviewed by hand. Every rule, fee and number is checked against Service Oklahoma.</p>
     <p class="legal">Study help only. Always confirm current rules with Service Oklahoma.<br>© 2026 angieCREATEs Digital Assets &amp; Media. Licensed under AC-CREATE-2026-COMM.</p>
   </div>
 </footer>
