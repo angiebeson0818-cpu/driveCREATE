@@ -11,7 +11,7 @@
 
 driveCREATE is a $10 digital bundle designed to take Oklahoma teen drivers from nervous passenger to confident driver. Study guides, defensive driving blueprints, parent co-pilot strategy, visual infographics, and a complete study workbook cover the full Oklahoma permit process through Service Oklahoma.
 
-Built for families doing Parent-Taught Driver Education (PTDE) through Service Oklahoma. Verified against Service Oklahoma requirements, July 2026.
+Built for families doing Parent-Taught Driver Education (PTDE) through Service Oklahoma. Checked against the Oklahoma Driver Manual and Service Oklahoma, October 2026.
 
 ---
 
@@ -24,9 +24,9 @@ Built for families doing Parent-Taught Driver Education (PTDE) through Service O
 - **15+ Visual Infographics**: GDL timeline, signs decoder, right-of-way, danger zones (printable)
 - **Complete Study Workbook**: condensed, practical, built for real life
 
-## Key Facts (verified July 2026)
+## Key Facts (checked against the Oklahoma Driver Manual, updated 11/24/25, in October 2026)
 
-- Learner Permit at 15½ with Driver Ed enrolled or finished, or 16 without
+- Learner Permit at 15 with Driver Ed enrolled or finished, or 16 without
 - Written Exam: 20 questions, 15 to pass, $4 per failed retake
 - Permit issuance fee: $42.50
 - Hold the permit 180 days, log 50 practice hours, 10 at night
