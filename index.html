@@ -759,7 +759,7 @@ footer nav a:hover { color: var(--gold-light); }
       <div class="ticket rise" id="golden-ticket">
         <span class="eyebrow">Golden Ticket</span>
         <h3>Have a Golden Ticket code?</h3>
-        <p>Enter it here. Your total drops to $0 at checkout, and your downloads open right after.</p>
+        <p>Type your code below. Spelling and capitals don't matter. Your total drops to $0 at checkout, and your downloads open right after.</p>
         <form id="ticketForm" autocomplete="off">
           <input id="ticketCode" type="text" placeholder="Enter code" aria-label="Golden Ticket code" spellcheck="false">
           <button class="btn btn-gold" type="submit">Redeem</button>
@@ -945,14 +945,21 @@ footer nav a:hover { color: var(--gold-light); }
     } else fallback();
   });
 
-  // Golden Ticket: Stripe checks the code at checkout, then sends the buyer to their downloads
-  var CHECKOUT = 'https://buy.stripe.com/fZuaEY5HVc8CbQUfXR9Zm01', tMsg = document.getElementById('ticketMsg');
+  // Golden Ticket: the site recognizes the code the visitor types (spelling and capitals
+  // don't matter), then hands Stripe the exact code so autocorrect can never break it.
+  var CHECKOUT = 'https://buy.stripe.com/fZuaEY5HVc8CbQUfXR9Zm01';
+  var STRIPE_CODE = 'GOLDENPASSS';
+  var ACCEPTED = ['GOLDEN', 'GOLDENPASS', 'GOLDENPASSS', 'GOLDENPASSES', 'GOLDENTICKET'];
+  var tMsg = document.getElementById('ticketMsg');
   document.getElementById('ticketForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    var code = document.getElementById('ticketCode').value.trim().toUpperCase();
+    var code = (document.getElementById('ticketCode').value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
     if (!code) { tMsg.className = 'msg bad'; tMsg.textContent = 'Enter your code first.'; return; }
+    if (ACCEPTED.indexOf(code) === -1) {
+      tMsg.className = 'msg bad'; tMsg.textContent = 'That code didn’t match. Check the spelling and try again.'; return;
+    }
     tMsg.className = 'msg good'; tMsg.textContent = 'Taking you to checkout with your code applied.';
-    window.location.href = CHECKOUT + '?prefilled_promo_code=' + encodeURIComponent(code);
+    window.location.href = CHECKOUT + '?prefilled_promo_code=' + STRIPE_CODE;
   });
 
   // Sticky phone buttons appear after the hero
