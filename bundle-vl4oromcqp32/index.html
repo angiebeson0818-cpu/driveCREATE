@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Your driveCREATE Bundle</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@400;600;700&display=swap">
+<style>
+:root {
+  --onyx: #0F0F0F; --charcoal: #1A1A1A; --slate: #262626;
+  --gold: #D4AF37; --gold-light: #E8CC72; --cream: #FDFBD3; --white: #FFFFFF; --muted: #B9B4A4;
+  --line: rgba(212,175,55,0.18);
+  --display: "Bebas Neue", "Arial Narrow", Impact, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --foil: linear-gradient(135deg,#A8862A 0%,#D4AF37 35%,#E8CC72 50%,#D4AF37 65%,#A8862A 100%);
+  --shimmer: linear-gradient(120deg,#D4AF37 0%,#E8CC72 22%,#FDFBD3 45%,#FFFFFF 58%,#FDFBD3 72%,#E8CC72 88%,#D4AF37 100%);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--onyx); color: var(--white); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 56px max(20px, env(safe-area-inset-right, 0px)) 72px max(20px, env(safe-area-inset-left, 0px)); display: grid; gap: 32px; }
+.top { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); }
+.top img { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(212,175,55,.6); }
+.wm { font-size: 24px; }
+.wm i { font-family: var(--serif); font-weight: 600; }
+.wm b { font-family: var(--display); font-weight: 400; letter-spacing: .04em; background: var(--shimmer); background-size: 220% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sh 6s linear infinite; }
+@keyframes sh { to { background-position: 220% center; } }
+.eyebrow { font-family: var(--display); letter-spacing: .16em; color: var(--gold); font-size: 15px; }
+h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(38px, 6vw, 60px); line-height: 1.05; margin: 6px 0 12px; text-wrap: balance; }
+.lede { color: #D8D3C2; max-width: 60ch; margin: 0; }
+.files { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.file { background: var(--charcoal); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: grid; gap: 10px; align-content: start; }
+.file.bonus { border-color: rgba(212,175,55,.55); }
+.file h2 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin: 0; }
+.file p { color: var(--muted); font-size: 14.5px; margin: 0; }
+.btn { justify-self: start; display: inline-flex; align-items: center; min-height: 46px; padding: 10px 22px; border-radius: 999px; background: var(--foil); color: #1A1406; font-weight: 700; font-size: 14.5px; text-decoration: none; box-shadow: 0 8px 24px rgba(212,175,55,.25), inset 0 1px 0 rgba(255,255,255,.55); transition: transform .3s cubic-bezier(0.22,1,0.36,1); }
+.btn:hover { transform: translateY(-2px); }
+.btn:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+.note { background: rgba(212,175,55,.07); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 14px 16px; color: #E9E5D6; font-size: 15px; }
+footer { color: #8A8577; font-size: 12.5px; text-align: center; }
+footer a { color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="top" href="https://angieCREATEs.PRO" aria-label="angieCREATEs home">
+    <img src="../assets/logo.png" alt="angieCREATEs logo" width="44" height="44">
+    <span class="wm"><i>drive</i><b>CREATE</b></span>
+  </a>
+  <header>
+    <span class="eyebrow">Thank you</span>
+    <h1>Your bundle is ready.</h1>
+    <p class="lede">Tap each guide to download it. Bookmark this page so you can come back anytime. The guides are for your family only, so please don't share this link.</p>
+  </header>
+  <div class="files">
+    <div class="file"><h2>Oklahoma Driver Blueprint</h2><p>All 15 blueprint pages and the full road map in one guide.</p><a class="btn" href="files/oklahoma-driver-blueprint.pdf" download>Download PDF</a></div>
+    <div class="file"><h2>Complete Study Guide</h2><p>The Oklahoma permit study guide with practice questions and the full answer key.</p><a class="btn" href="files/complete-study-guide.pdf" download>Download PDF</a></div>
+    <div class="file"><h2>Defensive Driving Blueprint</h2><p>The 3-second rule, blind spots, hydroplaning and the Parent's Code of Calm.</p><a class="btn" href="files/defensive-driving-blueprint.pdf" download>Download PDF</a></div>
+    <div class="file"><h2>Road Literacy Primer</h2><p>Signs, lines and road basics for brand-new drivers.</p><a class="btn" href="files/road-literacy-primer.pdf" download>Download PDF</a></div>
+    <div class="file"><h2>Mastering the Drive Test</h2><p>The cockpit drill, backing up, parallel parking and more.</p><a class="btn" href="files/mastering-practical-driving.pdf" download>Download PDF</a></div>
+    <div class="file bonus"><h2>Bonus video</h2><p>The Oklahoma Permit Blueprint walkthrough with Angie.</p><a class="btn" href="files/permit-blueprint-video.mp4" download>Download video</a></div>
+  </div>
+  <p class="note">Print the PDFs at home, keep the Go-Bag checklist by the door, and start with step 1. You've got this.</p>
+  <footer>
+    <p><a href="https://drive-create.vercel.app">Back to driveCREATE</a></p>
+    <p>© 2026 angieCREATEs Digital Assets &amp; Media. Licensed under AC-CREATE-2026-COMM.</p>
+  </footer>
+</main>
+</body>
+</html>
